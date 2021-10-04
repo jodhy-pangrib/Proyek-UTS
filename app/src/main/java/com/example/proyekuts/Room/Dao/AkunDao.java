@@ -1,0 +1,29 @@
+package com.example.proyekuts.Room.Dao;
+
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+import androidx.room.Update;
+
+import com.example.proyekuts.Room.Entity.Akun;
+
+import java.util.List;
+
+@Dao
+public interface AkunDao {
+    @Query("SELECT * FROM akun")
+    List<Akun> getAll();
+
+    @Insert
+    void insertAkun(Akun akun);
+
+    @Update
+    void updateTodo(Akun akun);
+
+    @Delete
+    void deleteTodo(Akun akun);
+
+    @Query("SELECT * FROM Akun WHERE username=(:username) and password=(:password)")
+    Akun login(String username, String password);
+}
