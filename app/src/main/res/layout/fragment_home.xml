@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center_vertical">
+        android:layout_gravity="center_horizontal">
 
         <LinearLayout
             android:id="@+id/LLTop"
@@ -41,23 +41,27 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="90dp"
+                android:layout_marginLeft="100dp"
                 android:src="@drawable/ic_baseline_notifications_24"
                 app:tint="#13548A" />
 
         </LinearLayout>
 
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:text="Choose Your Favorite Room!"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:textColor="#13548A"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="60dp"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:text="Choose Your Favorite Room!"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="#13548A"/>
+        </LinearLayout>
 
         <GridLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="20dp"
