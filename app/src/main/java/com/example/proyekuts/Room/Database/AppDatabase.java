@@ -6,7 +6,7 @@ import androidx.room.RoomDatabase;
 import com.example.proyekuts.Room.Dao.AkunDao;
 import com.example.proyekuts.Room.Entity.Akun;
 
-@Database(entities = {Akun.class}, version = 1)
+@Database(entities = {Akun.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract AkunDao akunDao();
 }

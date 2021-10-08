@@ -30,7 +30,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/imgFinal"/>
+        android:src="@drawable/img_final"/>
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
