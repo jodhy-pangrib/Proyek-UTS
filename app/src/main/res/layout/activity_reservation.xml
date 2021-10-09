@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/parentReservation"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar" android:id="@+id/toolbar"/>
+
+    <TextView
+        android:id="@+id/hiUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Hi, Username\nComplete Your Data"
+        android:textColor="#2B92D5"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp" />
+
+    <TextView
+        android:id="@+id/roomType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/hiUser"
+        app:layout_constraintStart_toStartOf="@id/hiUser"
+        android:layout_marginTop="20dp"
+        android:text="Room Type"
+        android:textColor="#13548A"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/isiRoomType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/roomType"
+        app:layout_constraintTop_toBottomOf="@id/hiUser"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="Room Type"
+        android:textColor="#BABABA"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/checkIn"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/roomType"
+            app:layout_constraintStart_toStartOf="@id/roomType"
+            android:layout_marginTop="20dp"
+            android:hint="Check In Date"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/checkOut"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/checkIn"
+            app:layout_constraintStart_toStartOf="@id/checkIn"
+            android:hint="Check Out Date"
+            android:inputType="date" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gambarKamar"
+        app:layout_constraintTop_toBottomOf="@id/checkOut"
+        app:layout_constraintStart_toStartOf="@id/checkOut"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp">
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:src="@drawable/kamarhotel"
+            android:scaleType="centerCrop"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/gambarAntri"
+        app:layout_constraintTop_toBottomOf="@id/gambarKamar"
+        app:layout_constraintStart_toStartOf="@id/gambarKamar"
+        app:layout_constraintEnd_toEndOf="@id/gambarKamar"
+        android:layout_width="320dp"
+        android:layout_height="130dp"
+        android:src="@drawable/img_order"
+        android:scaleType="fitXY"
+        android:layout_marginTop="20dp" />
+
+    <com.google.android.material.button.MaterialButton
+        app:layout_constraintBottom_toBottomOf="@id/parentReservation"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:backgroundTint="#22597D"
+        android:id="@+id/submit"
+        android:text="Submit"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
