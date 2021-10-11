@@ -1,114 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentReservation"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
-    <include layout="@layout/toolbar"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar" android:id="@+id/toolbar"/>
 
     <TextView
+        android:id="@+id/hiUsernamePayment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
         android:text="Hi, Username\nComplete Your Payment"
         android:textColor="#2B92D5"
-        android:textSize="25sp"
+        android:textSize="24dp"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        />
+        android:layout_marginLeft="30dp" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/namaPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/hiUsernamePayment"
+        app:layout_constraintStart_toStartOf="@id/hiUsernamePayment"
+        android:layout_marginTop="20dp"
+        android:text="Name"
+        android:textColor="#13548A"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/isiNamaPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/namaPayment"
+        app:layout_constraintTop_toBottomOf="@id/hiUsernamePayment"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:text="Name"
+        android:textColor="#BABABA"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/roomTypePayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/namaPayment"
+        app:layout_constraintStart_toStartOf="@id/namaPayment"
+        android:layout_marginTop="20dp"
+        android:text="Room Type"
+        android:textColor="#13548A"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/isiRoomTypePayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/roomTypePayment"
+        app:layout_constraintTop_toBottomOf="@id/namaPayment"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:text="Room Type"
+        android:textColor="#BABABA"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/checkInPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/roomTypePayment"
+        app:layout_constraintStart_toStartOf="@id/roomTypePayment"
+        android:layout_marginTop="20dp"
+        android:text="Check In Date"
+        android:textColor="#13548A"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/isiCheckInPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/checkInPayment"
+        app:layout_constraintTop_toBottomOf="@id/roomTypePayment"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:text="DD/MM/YYYY"
+        android:textColor="#BABABA"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/checkOutPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/checkInPayment"
+        app:layout_constraintStart_toStartOf="@id/checkInPayment"
+        android:layout_marginTop="20dp"
+        android:text="Check Out Date"
+        android:textColor="#13548A"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/isiCheckOutPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/checkOutPayment"
+        app:layout_constraintTop_toBottomOf="@id/checkInPayment"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="DD/MM/YYYY"
+        android:textColor="#BABABA"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/totalPricePayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/checkOutPayment"
+        app:layout_constraintStart_toStartOf="@id/checkOutPayment"
+        android:layout_marginTop="20dp"
+        android:text="Total Price"
+        android:textColor="#13548A"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/isiTotalPricePayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/totalPricePayment"
+        app:layout_constraintTop_toBottomOf="@id/checkOutPayment"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="20dp"
+        android:text="Total Price"
+        android:textColor="#BABABA"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/yourCashPayment"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/totalPricePayment"
+        app:layout_constraintStart_toStartOf="@id/totalPricePayment"
+        android:hint="Your Cash"
+        android:inputType="number" />
+
+    <ImageView
+        android:id="@+id/imagePayment"
+        android:layout_width="250dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintTop_toBottomOf="@id/yourCashPayment"
+        app:layout_constraintStart_toStartOf="@id/yourCashPayment"
+        android:src="@drawable/img_order"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="20dp"/>
+
+    <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_height="75dp"
+        app:layout_constraintTop_toBottomOf="@id/imagePayment"
+        app:layout_constraintStart_toStartOf="@id/imagePayment"
+        android:backgroundTint="#22597D"
+        android:layout_marginTop="65dp"
+        android:id="@+id/start"
+        android:text="Pay Now"/>
 
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/nama"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
-                android:layout_marginBottom="20dp"
-                android:text="Name"
-                android:textColor="#2B92D5"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/roomType"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:text="Room Type"
-                android:textColor="#2B92D5"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/checkIn"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:hint="Check In Date"
-            android:inputType="date" />
-
-        <EditText
-            android:id="@+id/checkOut"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:hint="Check Out Date"
-            android:inputType="date" />
-
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/totalPrice"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:text="Total Price"
-                android:textColor="#2B92D5"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/yourCash"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:hint="Your Cash"
-            android:inputType="number" />
-
-        <ImageView
-            android:layout_width="250dp"
-            android:layout_height="120dp"
-            android:src="@drawable/img_order"
-            android:scaleType="centerCrop"
-            android:layout_marginTop="20dp"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:backgroundTint="#22597D"
-            android:layout_marginTop="10dp"
-            android:id="@+id/start"
-            android:text="Pay Now"/>
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
