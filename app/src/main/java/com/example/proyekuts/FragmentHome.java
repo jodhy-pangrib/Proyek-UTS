@@ -5,21 +5,32 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
+import com.example.proyekuts.dataBinding.DataHotel;
+import com.example.proyekuts.dataBinding.DataKamarHotel;
+import com.example.proyekuts.dataBinding.RecyclerViewAdapter;
 import com.example.proyekuts.SharedPreferences.Entity.User;
 import com.example.proyekuts.SharedPreferences.Preferences.UserPreferences;
+import com.example.proyekuts.databinding.FragmentHomeBinding;
+
+import java.util.ArrayList;
 
 public class FragmentHome extends Fragment {
 
     // TODO: Rename and change types of parameters
     private User user;
     private UserPreferences userPreferences;
+    FragmentHomeBinding binding;
+    ArrayList<DataHotel> RoomList;
+    private RecyclerView recyclerView;
 
 
     public FragmentHome() {
@@ -30,7 +41,9 @@ public class FragmentHome extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false);
+        View view = binding.getRoot();
+        return view;
     }
 
     @Override
@@ -40,6 +53,12 @@ public class FragmentHome extends Fragment {
 
         user = userPreferences.getUserLogin();
 
+        RoomList = new DataKamarHotel().Room;
+
+        recyclerView = binding.rvKamar;
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(new RecyclerViewAdapter(RoomList));
+
         checkLogin();
     }
 
@@ -47,8 +66,6 @@ public class FragmentHome extends Fragment {
         /* this function will check if user login, akan memunculkan toast jika tidak redirect ke login activity */
         if(!userPreferences.checkLogin()) {
             startActivity(new Intent(getContext(), LoginActivity.class));
-        } else {
-            Toast.makeText(getContext(), "Selamat Datang Kembali :)", Toast.LENGTH_LONG).show();
         }
     }
 }
