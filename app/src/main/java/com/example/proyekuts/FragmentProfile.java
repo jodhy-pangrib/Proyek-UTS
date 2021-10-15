@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,7 @@ import com.example.proyekuts.SharedPreferences.Preferences.UserPreferences;
 import com.google.android.material.button.MaterialButton;
 
 public class FragmentProfile extends Fragment {
+    TextView judul;
     ImageView arrow;
     MaterialButton logout;
     private UserPreferences userPreferences;
@@ -39,6 +41,10 @@ public class FragmentProfile extends Fragment {
         logout = view.findViewById(R.id.btnLogout);
 
         arrow = view.findViewById(R.id.arrow);
+        judul = view.findViewById(R.id.judul);
+
+        judul.setText("Akun");
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

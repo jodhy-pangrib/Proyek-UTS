@@ -6,7 +6,7 @@ public class DataKamarHotel {
     public ArrayList<DataHotel> Room;
 
     public DataKamarHotel(){
-        Room = new ArrayList();
+        Room = new ArrayList<>();
         Room.add(Standar);
         Room.add(Suite);
         Room.add(Single);
