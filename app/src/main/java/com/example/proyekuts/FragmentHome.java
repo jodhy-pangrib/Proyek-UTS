@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.proyekuts.dataBinding.DataHotel;
 import com.example.proyekuts.dataBinding.DataKamarHotel;
@@ -31,6 +32,7 @@ public class FragmentHome extends Fragment {
     FragmentHomeBinding binding;
     ArrayList<DataHotel> RoomList;
     private RecyclerView recyclerView;
+    TextView judul;
 
 
     public FragmentHome() {
@@ -52,6 +54,10 @@ public class FragmentHome extends Fragment {
         userPreferences = new UserPreferences(getContext());
 
         user = userPreferences.getUserLogin();
+
+        judul = view.findViewById(R.id.username);
+
+        judul.setText("Hi, "+user.getUsername()+"!");
 
         RoomList = new DataKamarHotel().Room;
 
