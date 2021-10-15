@@ -44,19 +44,13 @@ public class FragmentProfile extends Fragment {
         judul = view.findViewById(R.id.judul);
 
         judul.setText("Akun");
+        arrow.setVisibility(view.GONE);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 userPreferences.logout();
                 checkLogin();
-            }
-        });
-
-        arrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(view.getContext(), MainActivity.class));
             }
         });
     }
