@@ -20,6 +20,7 @@ public class UserPreferences {
     public static final String KEY_EMAIL = "email";
     public static final String KEY_NOTELP = "noTelp";
     public static final String KEY_UMUR = "umur";
+    public static final String KEY_ROOM = "room";
 
 
 
@@ -30,7 +31,7 @@ public class UserPreferences {
         editor = sharedPreferences.edit();
     }
 
-    public void setLogin(String nama, String jenisKelamin, String alamat, String email, String noTelp, String username, String password, int umur) {
+    public void setLogin(String nama, String jenisKelamin, String alamat, String email, String noTelp, String username, String password, int umur, String room) {
         /*Menyumpan data lagin ke sharedPreferences dengan key dan value */
         editor.putBoolean(IS_LOGIN, true);
         editor.putString(KEY_NAMA, nama);
@@ -41,6 +42,7 @@ public class UserPreferences {
         editor.putString(KEY_USERNAME, username);
         editor.putString(KEY_PASSWORD, password);
         editor.putInt(KEY_UMUR, umur);
+        editor.putString(KEY_ROOM, room);
 
         /* Jangan lupa commit karena kalo hanya set editornya saja dan tidak commit akan sia-sia */
         editor.commit();
@@ -48,7 +50,7 @@ public class UserPreferences {
 
     public User getUserLogin() {
         /* Mengembalikan object User untuk menampilkan data user jika user sudah login */
-        String username, password, nama, jenisKelamin, alamat, email, noTelp;
+        String username, password, nama, jenisKelamin, alamat, email, noTelp,room;
         int umur;
 
         nama = sharedPreferences.getString(KEY_NAMA, null);
@@ -59,8 +61,9 @@ public class UserPreferences {
         username = sharedPreferences.getString(KEY_USERNAME,null);
         password = sharedPreferences.getString(KEY_PASSWORD,null);
         umur = sharedPreferences.getInt(KEY_UMUR, -1);
+        room = sharedPreferences.getString(KEY_ROOM,null);
 
-        return new User(nama,jenisKelamin,alamat, email,noTelp,username,password,umur);
+        return new User(nama,jenisKelamin,alamat, email,noTelp,username,password,umur,room);
     }
 
     public boolean checkLogin() {

@@ -18,9 +18,10 @@ import com.example.proyekuts.SharedPreferences.Preferences.UserPreferences;
 import com.google.android.material.button.MaterialButton;
 
 public class FragmentProfile extends Fragment {
-    TextView judul;
+    TextView judul, nama, jenisKelamin, umur, alamat, email, noTelp, username, jenisKamar;
     ImageView arrow;
     MaterialButton logout;
+    private User user;
     private UserPreferences userPreferences;
 
     public FragmentProfile() {
@@ -42,9 +43,28 @@ public class FragmentProfile extends Fragment {
 
         arrow = view.findViewById(R.id.arrow);
         judul = view.findViewById(R.id.judul);
+        nama = view.findViewById(R.id.isiNamaProfil);
+        jenisKelamin = view.findViewById(R.id.isiNamaProfil);
+        umur = view.findViewById(R.id.isiUmurProfil);
+        alamat = view.findViewById(R.id.isiAlamatProfil);
+        email = view.findViewById(R.id.isiEmailProfil);
+        noTelp = view.findViewById(R.id.isiTeleponProfil);
+        username = view.findViewById(R.id.isiUsernameProfil);
+        jenisKamar = view.findViewById(R.id.isiJenisKamarProfil);
 
         judul.setText("Akun");
         arrow.setVisibility(view.GONE);
+
+        user = userPreferences.getUserLogin();
+
+        nama.setText(user.getNama());
+        jenisKelamin.setText(user.getJenisKelamin());
+        umur.setText(String.valueOf(user.getUmur()));
+        alamat.setText(user.getAlamat());
+        email.setText(user.getEmail());
+        noTelp.setText(user.getNoTelp());
+        username.setText(user.getUsername());
+        jenisKamar.setText(user.getRoom());
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

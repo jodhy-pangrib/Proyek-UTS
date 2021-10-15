@@ -174,7 +174,7 @@
         app:layout_constraintStart_toStartOf="@id/imagePayment"
         android:backgroundTint="#22597D"
         android:layout_marginTop="65dp"
-        android:id="@+id/start"
+        android:id="@+id/payment"
         android:text="Pay Now"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

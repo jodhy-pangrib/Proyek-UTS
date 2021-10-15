@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Akun tidak terdaftar!", Toast.LENGTH_LONG).show();
                 } else {
                     /* Set user to sharedPreferences */
-                    userPreferences.setLogin(akun.getNama(), akun.getJenisKelamin(), akun.getAlamat(), akun.getEmail(), akun.getNoTelp(), akun.getUsername(), akun.getPassword(), akun.getUmur());
+                    userPreferences.setLogin(akun.getNama(), akun.getJenisKelamin(), akun.getAlamat(), akun.getEmail(), akun.getNoTelp(), akun.getUsername(), akun.getPassword(), akun.getUmur(),"-");
                     if(userPreferences.checkLogin()) {
                         Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                         startActivity(intent);

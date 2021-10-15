@@ -37,7 +37,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#22597D"
         android:layout_marginTop="85dp"
-        android:id="@+id/start"
+        android:id="@+id/okay"
         android:text="Okay"/>
 
 </LinearLayout>

@@ -49,6 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 Intent intent = new Intent(view.getContext(), ReservationActivity.class);
                 intent.putExtra("urlGambar", data.getImgURL());
                 intent.putExtra("typeRoom", data.getNamaKamar());
+                intent.putExtra("harga", data.getStringHarga());
                 view.getContext().startActivity(intent);
             }
         });

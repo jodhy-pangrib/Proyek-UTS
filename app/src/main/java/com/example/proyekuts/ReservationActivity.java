@@ -66,6 +66,7 @@ public class ReservationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ReservationActivity.this, HomeActivity.class));
+                finish();
             }
         });
 
@@ -118,7 +119,14 @@ public class ReservationActivity extends AppCompatActivity {
                     if(days < 0) {
                         Toast.makeText(ReservationActivity.this, "Tanggal Check In tidak boleh lebih dari Tanggal Check Out atau sebaliknya!!!",Toast.LENGTH_LONG).show();
                     } else {
-                        startActivity(new Intent(ReservationActivity.this, PaymentActivity.class));
+                        String harga = getIntent().getStringExtra("harga");
+                        Intent intent = new Intent(ReservationActivity.this, PaymentActivity.class);
+                        intent.putExtra("harga",harga);
+                        intent.putExtra("checkIn",checkkIn);
+                        intent.putExtra("checkOut", checkkOut);
+                        intent.putExtra("typeRoom", typeRoom.getText().toString());
+                        intent.putExtra("days", String.valueOf(days));
+                        startActivity(intent);
                     }
                 } catch (ParseException e) {
                     e.printStackTrace();

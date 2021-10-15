@@ -1,10 +1,10 @@
 package com.example.proyekuts.SharedPreferences.Entity;
 
 public class User {
-    private String nama, jenisKelamin, alamat, email, noTelp, username, password;
+    private String nama, jenisKelamin, alamat, email, noTelp, username, password, room;
     private int umur;
 
-    public User(String nama, String jenisKelamin, String alamat, String email, String noTelp, String username, String password, int umur) {
+    public User(String nama, String jenisKelamin, String alamat, String email, String noTelp, String username, String password, int umur, String room) {
         this.nama = nama;
         this.jenisKelamin = jenisKelamin;
         this.alamat = alamat;
@@ -13,6 +13,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.umur = umur;
+        this.room = room;
     }
 
     public String getNama() {
@@ -77,5 +78,13 @@ public class User {
 
     public void setUmur(int umur) {
         this.umur = umur;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
     }
 }
