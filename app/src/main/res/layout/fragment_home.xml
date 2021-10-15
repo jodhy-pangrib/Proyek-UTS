@@ -72,6 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="550dp"
             android:layout_marginTop="15dp"
+            android:scrollbars="vertical"
             app:layout_constraintTop_toBottomOf="@id/txtFav"
             tools:listitem="@layout/cardview_kamar" />
 
