@@ -1,13 +1,18 @@
 package com.example.proyekuts.dataBinding;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import com.example.proyekuts.R;
+import com.example.proyekuts.ReservationActivity;
 import com.example.proyekuts.databinding.CardviewKamarBinding;
 
 import java.util.ArrayList;
@@ -37,6 +42,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.viewHolder holder, int position) {
         holder.binding.setRoom(RoomList.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DataHotel data = holder.binding.getRoom();
+                Intent intent = new Intent(view.getContext(), ReservationActivity.class);
+                intent.putExtra("urlGambar", data.getImgURL());
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

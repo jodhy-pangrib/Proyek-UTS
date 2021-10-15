@@ -90,8 +90,7 @@ public class DataHotel {
     @BindingAdapter({ "imgURL" })
     public static void loadImage(ImageView imageView, String imageURL) {
         Glide.with(imageView.getContext())
-                .setDefaultRequestOptions(new RequestOptions()
-                        .circleCrop())
+                .setDefaultRequestOptions(new RequestOptions())
                 .load(imageURL)
                 .into(imageView);
     }
