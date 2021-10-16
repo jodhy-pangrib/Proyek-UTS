@@ -28,7 +28,7 @@ public class Akun {
     private String username;
 
     @ColumnInfo(name = "password")
-    private String password;
+    private String password;    
 
     @ColumnInfo(name = "umur")
     private int umur;
