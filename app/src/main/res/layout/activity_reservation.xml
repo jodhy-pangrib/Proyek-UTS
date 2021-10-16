@@ -12,20 +12,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/roomType"
         android:text="Hi, Username\nComplete Your Data"
         android:textColor="#2B92D5"
         android:textSize="24dp"
         android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp" />
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:id="@+id/roomType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/hiUser"
-        app:layout_constraintStart_toStartOf="@id/hiUser"
+        app:layout_constraintStart_toStartOf="@id/checkIn"
         android:layout_marginTop="20dp"
         android:text="Room Type"
         android:textColor="#13548A"
@@ -47,7 +46,9 @@
 
         <EditText
             android:id="@+id/checkIn"
-            android:layout_width="350dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/roomType"
             app:layout_constraintStart_toStartOf="@id/roomType"
@@ -60,9 +61,11 @@
 
         <EditText
             android:id="@+id/checkOut"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintTop_toBottomOf="@id/checkIn"
             app:layout_constraintStart_toStartOf="@id/checkIn"
             android:hint="Check Out Date"
@@ -75,14 +78,17 @@
         android:id="@+id/gambarKamar"
         app:layout_constraintTop_toBottomOf="@id/checkOut"
         app:layout_constraintStart_toStartOf="@id/checkOut"
+        app:layout_constraintEnd_toEndOf="@id/checkOut"
         android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         app:cardCornerRadius="20dp">
 
         <ImageView
-            android:layout_width="350dp"
-            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/imageRoom"
             android:src="@drawable/kamarhotel"
             android:scaleType="centerCrop"/>
@@ -92,10 +98,11 @@
     <ImageView
         android:id="@+id/gambarAntri"
         app:layout_constraintTop_toBottomOf="@id/gambarKamar"
+        app:layout_constraintBottom_toTopOf="@id/submit"
         app:layout_constraintStart_toStartOf="@id/gambarKamar"
         app:layout_constraintEnd_toEndOf="@id/gambarKamar"
-        android:layout_width="320dp"
-        android:layout_height="130dp"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
         android:src="@drawable/img_order"
         android:scaleType="fitXY"
         android:layout_marginTop="20dp" />
