@@ -85,7 +85,7 @@ public class SignUpActivity extends AppCompatActivity {
                 || noTelp.getText().toString().trim().isEmpty()
                 || umur.getText().toString().trim().isEmpty()
                 || cek == -1) {
-            Toast.makeText(SignUpActivity.this, "Data Masih Kosong!!", Toast.LENGTH_LONG).show();
+            Toast.makeText(SignUpActivity.this, "Data Masih Kosong!!", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -99,11 +99,12 @@ public class SignUpActivity extends AppCompatActivity {
         final String telp = noTelp.getText().toString();
         final String user = username.getText().toString();
         final String pass = password.getText().toString();
+        final String typeRoom = "-";
 
         class AddTodo extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
-                Akun akun = new Akun(name,gender,alamatUser,emailUser,telp,user,pass,Integer.parseInt(usia));
+                Akun akun = new Akun(name,gender,alamatUser,emailUser,telp,user,pass,Integer.parseInt(usia),typeRoom);
 
                 DatabaseAkun.getInstance(SignUpActivity.this)
                         .getDatabase()
@@ -116,7 +117,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             protected  void onPostExecute(Void unused) {
                 super.onPostExecute(unused);
-                Toast.makeText(SignUpActivity.this, "Berhasil Sign Up", Toast.LENGTH_LONG).show();
+                Toast.makeText(SignUpActivity.this, "Berhasil Sign Up", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                 finish();
             }

@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
     private boolean validateForm() {
         /* Check username & password is empty or not */
         if(username.getEditText().getText().toString().trim().isEmpty() || password.getEditText().getText().toString().trim().isEmpty()) {
-            Toast.makeText(LoginActivity.this, "Username Atau Password Kosong", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, "Username Atau Password Kosong", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -97,10 +97,10 @@ public class LoginActivity extends AppCompatActivity {
                 super.onPostExecute(akun);
 
                 if(akun == null) {
-                    Toast.makeText(LoginActivity.this, "Akun tidak terdaftar!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Akun tidak terdaftar!", Toast.LENGTH_SHORT).show();
                 } else {
                     /* Set user to sharedPreferences */
-                    userPreferences.setLogin(akun.getNama(), akun.getJenisKelamin(), akun.getAlamat(), akun.getEmail(), akun.getNoTelp(), akun.getUsername(), akun.getPassword(), akun.getUmur(),"-");
+                    userPreferences.setLogin(akun.getNama(), akun.getJenisKelamin(), akun.getAlamat(), akun.getEmail(), akun.getNoTelp(), akun.getUsername(), akun.getPassword(), akun.getUmur(), akun.getTypeRoom());
                     if(userPreferences.checkLogin()) {
                         Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                         startActivity(intent);

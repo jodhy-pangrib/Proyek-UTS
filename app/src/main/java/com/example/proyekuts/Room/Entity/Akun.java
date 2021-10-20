@@ -33,7 +33,10 @@ public class Akun {
     @ColumnInfo(name = "umur")
     private int umur;
 
-    public Akun(String nama, String jenisKelamin, String alamat, String email, String noTelp, String username, String password, int umur) {
+    @ColumnInfo(name = "typeRoom")
+    private String typeRoom;
+
+    public Akun(String nama, String jenisKelamin, String alamat, String email, String noTelp, String username, String password, int umur, String typeRoom) {
         this.nama = nama;
         this.jenisKelamin = jenisKelamin;
         this.alamat = alamat;
@@ -42,6 +45,7 @@ public class Akun {
         this.username = username;
         this.password = password;
         this.umur = umur;
+        this.typeRoom = typeRoom;
     }
 
     public int getId() {
@@ -114,5 +118,13 @@ public class Akun {
 
     public void setUmur(int umur) {
         this.umur = umur;
+    }
+
+    public String getTypeRoom() {
+        return typeRoom;
+    }
+
+    public void setTypeRoom(String typeRoom) {
+        this.typeRoom = typeRoom;
     }
 }

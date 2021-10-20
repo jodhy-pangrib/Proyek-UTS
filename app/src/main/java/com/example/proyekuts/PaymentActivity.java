@@ -1,8 +1,11 @@
 package com.example.proyekuts;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -10,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.proyekuts.Room.Database.DatabaseAkun;
+import com.example.proyekuts.Room.Entity.Akun;
 import com.example.proyekuts.SharedPreferences.Entity.User;
 import com.example.proyekuts.SharedPreferences.Preferences.UserPreferences;
 import com.google.android.material.button.MaterialButton;
@@ -21,6 +26,7 @@ public class PaymentActivity extends AppCompatActivity {
     EditText cash;
     ImageView arrow;
     MaterialButton payment;
+    String setHarga;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +57,12 @@ public class PaymentActivity extends AppCompatActivity {
         double price = Double.parseDouble(getIntent().getStringExtra("harga"));
         double days = Double.parseDouble(getIntent().getStringExtra("days"));
         price = days*price;
-        harga.setText(String.valueOf(price));
+        setHarga = String.valueOf(price);
+        harga.setText("Rp. "+setHarga);
 
         arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PaymentActivity.this, ReservationActivity.class));
                 finish();
             }
         });
@@ -64,18 +70,52 @@ public class PaymentActivity extends AppCompatActivity {
         payment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double bayar = Double.parseDouble(cash.getText().toString().trim());
-                double price = Double.parseDouble(harga.getText().toString().trim());
-                if(bayar < price) {
-                    Toast.makeText(PaymentActivity.this, "Uang Kurang!!!",Toast.LENGTH_LONG).show();
+                if(cash.getText().toString().isEmpty()) {
+                    Toast.makeText(PaymentActivity.this, "Pembayaran Harus Diisi!!!",Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(PaymentActivity.this, "Pembayaran Berhasil!",Toast.LENGTH_LONG).show();
-                    userPreferences.setLogin(user.getNama(),user.getJenisKelamin(),user.getAlamat(),user.getEmail(),user.getNoTelp(),user.getUsername(),user.getPassword(),user.getUmur(),roomType.getText().toString().trim());
-                    startActivity(new Intent(PaymentActivity.this, FinalPageActivity.class));
-                    finish();
+                    double bayar = Double.parseDouble(cash.getText().toString().trim());
+                    double price = Double.parseDouble(setHarga);
+                    if(bayar < price) {
+                        Toast.makeText(PaymentActivity.this, "Uang Kurang!!!",Toast.LENGTH_SHORT).show();
+                    } else {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(PaymentActivity.this);
+                        builder.setTitle("Pembayaran Berhasil")
+                                .setMessage("Uang Kembali : Rp. "+(bayar-price))
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        update(roomType.getText().toString().trim(),user.getUsername());
+                                    }
+                                })
+                                .setCancelable(true)
+                                .create().show();
+                    }
                 }
             }
         });
 
+    }
+
+    private void update(String typeRoom, String username) {
+        class Update extends AsyncTask<Void, Void, Void> {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                DatabaseAkun.getInstance(PaymentActivity.this)
+                        .getDatabase()
+                        .akunDao()
+                        .updateAkun(typeRoom,username);
+
+                return null;
+            }
+
+            @Override
+            protected  void onPostExecute(Void unused) {
+                super.onPostExecute(unused);
+                userPreferences.setLogin(user.getNama(),user.getJenisKelamin(),user.getAlamat(),user.getEmail(),user.getNoTelp(),user.getUsername(),user.getPassword(),user.getUmur(),roomType.getText().toString().trim());
+                startActivity(new Intent(PaymentActivity.this, FinalPageActivity.class));
+            }
+        }
+        Update update = new Update();
+        update.execute();
     }
 }

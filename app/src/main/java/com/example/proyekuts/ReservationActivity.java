@@ -108,25 +108,29 @@ public class ReservationActivity extends AppCompatActivity {
                 try {
                     String checkkIn = checkIn.getText().toString();
                     String checkkOut = checkOut.getText().toString();
-                    SimpleDateFormat dateFormatterCheck = new SimpleDateFormat("dd/MM/yyyy");
-
-                    Date dateCheckIn = dateFormatterCheck.parse(checkkIn);
-                    Date dateCheckOut = dateFormatterCheck.parse(checkkOut);
-
-                    long diff = dateCheckOut.getTime() - dateCheckIn.getTime();
-                    long days = (TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
-
-                    if(days < 0) {
-                        Toast.makeText(ReservationActivity.this, "Tanggal Check In tidak boleh lebih dari Tanggal Check Out atau sebaliknya!!!",Toast.LENGTH_LONG).show();
+                    if(checkkIn.isEmpty() || checkkOut.isEmpty()) {
+                        Toast.makeText(ReservationActivity.this, "Isi Tanggal Dulu!!!",Toast.LENGTH_SHORT).show();
                     } else {
-                        String harga = getIntent().getStringExtra("harga");
-                        Intent intent = new Intent(ReservationActivity.this, PaymentActivity.class);
-                        intent.putExtra("harga",harga);
-                        intent.putExtra("checkIn",checkkIn);
-                        intent.putExtra("checkOut", checkkOut);
-                        intent.putExtra("typeRoom", typeRoom.getText().toString());
-                        intent.putExtra("days", String.valueOf(days));
-                        startActivity(intent);
+                        SimpleDateFormat dateFormatterCheck = new SimpleDateFormat("dd/MM/yyyy");
+
+                        Date dateCheckIn = dateFormatterCheck.parse(checkkIn);
+                        Date dateCheckOut = dateFormatterCheck.parse(checkkOut);
+
+                        long diff = dateCheckOut.getTime() - dateCheckIn.getTime();
+                        long days = (TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
+
+                        if(days < 0) {
+                            Toast.makeText(ReservationActivity.this, "Tanggal Check In tidak boleh lebih dari Tanggal Check Out atau sebaliknya!!!",Toast.LENGTH_SHORT).show();
+                        } else {
+                            String harga = getIntent().getStringExtra("harga");
+                            Intent intent = new Intent(ReservationActivity.this, PaymentActivity.class);
+                            intent.putExtra("harga",harga);
+                            intent.putExtra("checkIn",checkkIn);
+                            intent.putExtra("checkOut", checkkOut);
+                            intent.putExtra("typeRoom", typeRoom.getText().toString());
+                            intent.putExtra("days", String.valueOf(days));
+                            startActivity(intent);
+                        }
                     }
                 } catch (ParseException e) {
                     e.printStackTrace();
