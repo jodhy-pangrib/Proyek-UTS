@@ -53,6 +53,8 @@ public class ReservationActivity extends AppCompatActivity {
         Glide.with(ReservationActivity.this)
                 .setDefaultRequestOptions(new RequestOptions())
                 .load(imageUrl)
+                .placeholder(android.R.drawable.progress_indeterminate_horizontal)
+                .error(android.R.drawable.stat_notify_error)
                 .into(imageRoom);
 
         userPreferences = new UserPreferences(ReservationActivity.this);
@@ -113,14 +115,26 @@ public class ReservationActivity extends AppCompatActivity {
                     } else {
                         SimpleDateFormat dateFormatterCheck = new SimpleDateFormat("dd/MM/yyyy");
 
+                        Date tempCurrent = Calendar.getInstance().getTime();
+                        String formatCurrent = dateFormatterCheck.format(tempCurrent);
+
                         Date dateCheckIn = dateFormatterCheck.parse(checkkIn);
                         Date dateCheckOut = dateFormatterCheck.parse(checkkOut);
+                        Date current = dateFormatterCheck.parse(formatCurrent);
 
+                        long check1 =  dateCheckIn.getTime() - current.getTime();
+                        long check2 = dateCheckOut.getTime() - current.getTime();
                         long diff = dateCheckOut.getTime() - dateCheckIn.getTime();
                         long days = (TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
+                        long days2 = (TimeUnit.DAYS.convert(check1, TimeUnit.MILLISECONDS));
+                        long days3 = (TimeUnit.DAYS.convert(check2, TimeUnit.MILLISECONDS));
 
-                        if(days < 0) {
-                            Toast.makeText(ReservationActivity.this, "Tanggal Check In tidak boleh lebih dari Tanggal Check Out atau sebaliknya!!!",Toast.LENGTH_SHORT).show();
+                        if(days2 < 0 || days3 < 0) {
+                            Toast.makeText(ReservationActivity.this, "Inputan Tanggal Invalid!!!",Toast.LENGTH_SHORT).show();
+                        } else if(days < 0) {
+                            Toast.makeText(ReservationActivity.this, "Check In tidak boleh lebih dari Check Out atau sebaliknya!!!",Toast.LENGTH_SHORT).show();
+                        } else if(days == 0) {
+                            Toast.makeText(ReservationActivity.this, "Minimal Nginap 1 Hari!!!",Toast.LENGTH_SHORT).show();
                         } else {
                             String harga = getIntent().getStringExtra("harga");
                             Intent intent = new Intent(ReservationActivity.this, PaymentActivity.class);

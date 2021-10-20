@@ -12,8 +12,8 @@ import java.util.List;
 
 @Dao
 public interface AkunDao {
-    @Query("SELECT * FROM akun")
-    List<Akun> getAll();
+    @Query("SELECT EXISTS (SELECT * FROM Akun WHERE username=(:username) OR email=(:email))")
+    Boolean check(String username, String email);
 
     @Insert
     void insertAkun(Akun akun);

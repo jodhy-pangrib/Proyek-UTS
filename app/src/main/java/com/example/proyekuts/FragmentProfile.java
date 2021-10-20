@@ -44,7 +44,7 @@ public class FragmentProfile extends Fragment {
         arrow = view.findViewById(R.id.arrow);
         judul = view.findViewById(R.id.judul);
         nama = view.findViewById(R.id.isiNamaProfil);
-        jenisKelamin = view.findViewById(R.id.isiNamaProfil);
+        jenisKelamin = view.findViewById(R.id.isiJenisKelaminProfil);
         umur = view.findViewById(R.id.isiUmurProfil);
         alamat = view.findViewById(R.id.isiAlamatProfil);
         email = view.findViewById(R.id.isiEmailProfil);

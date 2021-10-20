@@ -92,6 +92,8 @@ public class DataHotel {
         Glide.with(imageView.getContext())
                 .setDefaultRequestOptions(new RequestOptions())
                 .load(imageURL)
+                .placeholder(android.R.drawable.progress_indeterminate_horizontal)
+                .error(android.R.drawable.stat_notify_error)
                 .into(imageView);
     }
 }
