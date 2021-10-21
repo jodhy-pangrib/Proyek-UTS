@@ -13,13 +13,16 @@ import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.proyekuts.Geolocation.MapActivity;
 import com.example.proyekuts.SharedPreferences.Preferences.UserPreferences;
 
 public class MainActivity extends AppCompatActivity {
     TextView here;
     Button start;
+    ImageView geolocation;
     private UserPreferences userPreferences;
 
     @Override
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         here = findViewById(R.id.here);
         start = findViewById(R.id.start);
+        geolocation = findViewById(R.id.geolocation);
 
         userPreferences = new UserPreferences(MainActivity.this);
 
@@ -38,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,SignUpActivity.class));
+            }
+        });
+
+        geolocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MapActivity.class));
             }
         });
 
