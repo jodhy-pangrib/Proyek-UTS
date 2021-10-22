@@ -29,7 +29,6 @@
         android:text="Nama"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/namaProfil"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
@@ -54,7 +53,6 @@
         android:text="Jenis Kelamin"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/jenisKelaminProfil"
         app:layout_constraintTop_toBottomOf="@id/isiNamaProfil" />
 
@@ -81,7 +79,6 @@
         android:text="Umur"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/umurProfil"
         app:layout_constraintTop_toBottomOf="@id/isiJenisKelaminProfil" />
 
@@ -108,7 +105,6 @@
         android:text="Alamat"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/alamatProfil"
         app:layout_constraintTop_toBottomOf="@id/isiUmurProfil" />
 
@@ -135,7 +131,6 @@
         android:text="Email"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/emailProfil"
         app:layout_constraintTop_toBottomOf="@id/isiAlamatProfil" />
 
@@ -162,7 +157,6 @@
         android:text="No. Telp"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/teleponProfil"
         app:layout_constraintTop_toBottomOf="@id/isiEmailProfil" />
 
@@ -189,7 +183,6 @@
         android:text="Username"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/usernameProfil"
         app:layout_constraintTop_toBottomOf="@id/isiTeleponProfil" />
 
@@ -216,7 +209,6 @@
         android:text="Jenis Kamar"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/jenisKamarProfil"
         app:layout_constraintTop_toBottomOf="@id/isiUsernameProfil" />
 
