@@ -14,6 +14,7 @@ import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.proyekuts.Geolocation.MapActivity;
@@ -22,7 +23,7 @@ import com.example.proyekuts.SharedPreferences.Preferences.UserPreferences;
 public class MainActivity extends AppCompatActivity {
     TextView here;
     Button start;
-    ImageView geolocation;
+    LinearLayout geolocation;
     private UserPreferences userPreferences;
 
     @Override

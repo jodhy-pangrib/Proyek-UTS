@@ -30,18 +30,24 @@
         android:layout_marginTop="20dp"
         android:textSize="16sp"/>
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/img_1"
-        android:id="@+id/geolocation"/>
-
-    <TextView
+    <LinearLayout
+        android:id="@+id/geolocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="See Our Location"
-        android:textColor="#2B92D5"/>
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/img_1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="See Our Location"
+            android:textColor="#2B92D5"/>
+    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="250dp"

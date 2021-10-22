@@ -168,12 +168,12 @@
         android:layout_marginTop="20dp"/>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/payment"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="-5dp"
         android:backgroundTint="#22597D"
-        android:id="@+id/payment"
-        android:text="PAY NOW"/>
+        android:text="PAY NOW"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

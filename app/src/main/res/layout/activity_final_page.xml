@@ -40,11 +40,12 @@
         android:src="@drawable/img_final"/>
 
     <com.google.android.material.button.MaterialButton
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/okay"
         android:layout_width="match_parent"
         android:layout_height="75dp"
+        android:layout_marginBottom="-5dp"
         android:backgroundTint="#22597D"
-        android:id="@+id/okay"
-        android:text="Okay" />
+        android:text="OKAY"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

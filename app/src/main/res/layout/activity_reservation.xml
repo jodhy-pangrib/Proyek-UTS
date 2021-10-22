@@ -108,11 +108,12 @@
         android:layout_marginTop="20dp" />
 
     <com.google.android.material.button.MaterialButton
-        app:layout_constraintBottom_toBottomOf="@id/parentReservation"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:backgroundTint="#22597D"
         android:id="@+id/submit"
-        android:text="SUBMIT"/>
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginBottom="-5dp"
+        android:backgroundTint="#22597D"
+        android:text="SUBMIT"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
