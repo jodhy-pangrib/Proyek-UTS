@@ -75,7 +75,7 @@
         android:layout_height="65dp"
         android:layout_marginTop="30dp"
         android:id="@+id/btnLogin"
-        android:backgroundTint="#13548A"
+        android:backgroundTint="#2B92D5"
         app:cornerRadius="15dp"
         android:text="LOGIN"/>
 

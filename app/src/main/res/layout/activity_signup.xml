@@ -121,7 +121,7 @@
                 android:layout_height="55dp"
                 android:layout_marginEnd="16dp"
                 android:layout_weight="1"
-                android:backgroundTint="#2B92D5"
+                android:backgroundTint="#0D3658"
                 app:cornerRadius="15dp"
                 android:text="CANCEL"
                 android:outlineSpotShadowColor="@color/white"/>
@@ -132,7 +132,7 @@
                 android:layout_height="55dp"
                 android:layout_marginStart="16dp"
                 android:layout_weight="1"
-                android:backgroundTint="#13548A"
+                android:backgroundTint="#2B92D5"
                 app:cornerRadius="15dp"
                 android:text="SIGN UP" />
         </LinearLayout>
