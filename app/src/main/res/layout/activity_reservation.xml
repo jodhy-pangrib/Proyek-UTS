@@ -113,6 +113,6 @@
         android:layout_height="80dp"
         android:backgroundTint="#22597D"
         android:id="@+id/submit"
-        android:text="Submit"/>
+        android:text="SUBMIT"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
