@@ -45,7 +45,7 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="110dp"
                         android:layout_height="100dp"
-                        android:scaleType="centerCrop"
+                        android:scaleType="fitXY"
                         bind:imgURL="@{room.imgURL}" />
 
                 </androidx.cardview.widget.CardView>
