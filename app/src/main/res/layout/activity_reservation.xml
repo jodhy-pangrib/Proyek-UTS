@@ -110,7 +110,7 @@
         android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginBottom="-5dp"
+        android:layout_marginBottom="-7dp"
         android:backgroundTint="#22597D"
         android:text="SUBMIT"
         app:layout_constraintBottom_toBottomOf="parent" />
