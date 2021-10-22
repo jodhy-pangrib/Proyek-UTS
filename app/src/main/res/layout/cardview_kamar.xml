@@ -126,13 +126,12 @@
 
                 <ImageView
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/fasilitas1"
-                    android:layout_marginEnd="20dp"
+                    app:layout_constraintTop_toTopOf="@id/hargaKamar"
+                    app:layout_constraintStart_toEndOf="@id/keterangan"
+                    app:layout_constraintBottom_toBottomOf="@id/keterangan"
                     android:scaleX="-1"
                     android:id="@+id/arrowCard"
-                    android:layout_marginLeft="50dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
