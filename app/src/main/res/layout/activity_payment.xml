@@ -41,9 +41,8 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="20dp"
         android:text="Name"
-        android:textColor="#BABABA"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/roomTypePayment"
@@ -66,9 +65,8 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:text="Room Type"
-        android:textColor="#BABABA"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/checkInPayment"
@@ -91,9 +89,8 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
         android:text="DD/MM/YYYY"
-        android:textColor="#BABABA"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/checkOutPayment"
@@ -116,9 +113,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="DD/MM/YYYY"
-        android:textColor="#BABABA"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
 
     <TextView
@@ -142,9 +138,8 @@
         android:layout_marginStart="55dp"
         android:layout_marginTop="20dp"
         android:text="Total Price"
-        android:textColor="#BABABA"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
     <EditText
         android:id="@+id/yourCashPayment"
