@@ -132,7 +132,7 @@ public class ReservationActivity extends AppCompatActivity {
                         if(days2 < 0 || days3 < 0) {
                             Toast.makeText(ReservationActivity.this, "Inputan Tanggal Invalid!!!",Toast.LENGTH_SHORT).show();
                         } else if(days < 0) {
-                            Toast.makeText(ReservationActivity.this, "Check In tidak boleh lebih dari Check Out atau sebaliknya!!!",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ReservationActivity.this, "Check In tidak boleh lebih dari Check Out",Toast.LENGTH_SHORT).show();
                         } else if(days == 0) {
                             Toast.makeText(ReservationActivity.this, "Minimal Nginap 1 Hari!!!",Toast.LENGTH_SHORT).show();
                         } else {
