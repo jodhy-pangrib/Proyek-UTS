@@ -5,11 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
+import com.example.proyekuts.SharedPreferences.Entity.User;
+import com.example.proyekuts.SharedPreferences.Preferences.UserPreferences;
 import com.google.android.material.button.MaterialButton;
 
 public class FinalPageActivity extends AppCompatActivity {
     MaterialButton okay;
+    TextView wehope;
+    private User user;
+    private UserPreferences userPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +23,12 @@ public class FinalPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_final_page);
 
         okay = findViewById(R.id.okay);
+        wehope = findViewById(R.id.wehope);
+
+        userPreferences = new UserPreferences(FinalPageActivity.this);
+        user = userPreferences.getUserLogin();
+
+        wehope.setText("We hope you enjoy your\nroom and your holiday\n\nHave fun "+user.getNama());
 
         okay.setOnClickListener(new View.OnClickListener() {
             @Override
